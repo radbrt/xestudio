@@ -16,4 +16,4 @@ services:
     volumes:
         - "./rstudio-data:/home/rstudio"
     environment:
-        - PASSWORD=lilletrille
+        - PASSWORD=Oracle18
