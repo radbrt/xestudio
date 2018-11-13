@@ -6,8 +6,8 @@ services:
     ports:
         - "1521:1521"
         - "5500:5500"
-          #    volumes:
-          #-  "./oracle-xe-data:/opt/oracle/oradata"
+    volumes:
+        -  "./oracle-xe-data:/opt/oracle/oradata"
   rstudio:
     image: orastudio
       #    build: ./orastudio
