@@ -24,7 +24,7 @@ RUN unzip /home/rstudio/${INSTACLI} && \
     unzip /home/rstudio/${INSTACLI_SDK} && \
     unzip /home/rstudio/${INSTACLI_SQLPLUS}
 
-RUN Rscript -e "install.packages(c('DBI'))"
+RUN Rscript -e "install.packages(c('DBI', 'tidyverse'))"
 
 RUN R CMD INSTALL --configure-args='--with-oci-lib=/instantclient_18_3 --with-oci-inc=/instantclient_18_3/sdk/include' /home/rstudio/${RORAPATH}
 
