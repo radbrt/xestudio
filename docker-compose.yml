@@ -1,15 +1,20 @@
 version: '2'
 services:
   xe18:
-    image: oracle-xe:18c
+    image: gvenzl/oracle-xe
       #    build: ./docker-oracle-xe
     ports:
         - "1521:1521"
         - "5500:5500"
     volumes:
         -  "./oracle-xe-data:/opt/oracle/oradata"
+    environment:
+        - ORACLE_PWD=Oracle18
+        - ORACLE_CHARACTERSET=AL32UTF8
+        - ORACLE_EDITION=xe
+        - ORACLE_SID=XE
   rstudio:
-    image: orastudio
+    image: rocker/rstudio
       #    build: ./orastudio
     ports:
         - "8787:8787"
